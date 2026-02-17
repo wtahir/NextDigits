@@ -8,11 +8,15 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+import logo from "@/assets/nextdigits-logo.jpeg";
+
 const Footer = () => (
   <footer className="border-t border-border py-10">
     <div className="container mx-auto px-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="font-heading text-xl font-bold gradient-text">NextDigits</div>
+        <a href="#">
+          <img src={logo} alt="NextDigits" className="h-10 object-contain" />
+        </a>
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
           {navLinks.map((link) => (
             <a
