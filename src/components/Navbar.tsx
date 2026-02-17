@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/nextdigits-logo.jpeg";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -32,8 +33,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
-        <a href="#" className="font-heading text-2xl font-bold gradient-text">
-          NextDigits
+        <a href="#">
+          <img src={logo} alt="NextDigits" className="h-9 object-contain" />
         </a>
 
         {/* Desktop nav */}
