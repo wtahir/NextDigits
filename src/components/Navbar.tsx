@@ -34,7 +34,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <a href="#">
-          <img src={logo} alt="NextDigits" className="h-9 object-contain" />
+          <img src={logo} alt="NextDigits" className="h-16 object-contain" />
         </a>
 
         {/* Desktop nav */}
