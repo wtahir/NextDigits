@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-import logo from "@/assets/nextdigits-logo.jpeg";
+import logo from "@/assets/nextdigits-logo.png";
 
 const Footer = () => (
   <footer className="border-t border-border py-10">
