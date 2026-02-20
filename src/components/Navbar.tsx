@@ -34,7 +34,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <a href="#">
-          <img src={logo} alt="NextDigits" className="w-auto object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]" style={{ mixBlendMode: 'lighten', height: '350px' }} />
+          <img src={logo} alt="NextDigits" className="object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]" style={{ mixBlendMode: 'lighten', width: '280px', margin: '-40px 0' }} />
         </a>
 
         {/* Desktop nav */}
