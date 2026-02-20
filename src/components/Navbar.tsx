@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/nextdigits-logo.jpeg";
+import logo from "@/assets/nextdigits-logo.png";
 
 const navLinks = [
   { label: "About", href: "#about" },
