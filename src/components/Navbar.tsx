@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Architecture", href: "#architecture" },
   { label: "Automation", href: "#automation" },
   { label: "Insurance", href: "#insurance" },
-  { label: "Join Us", href: "#joinus" },
+  { label: "Careers", href: "#careers" },
   { label: "Contact Us", href: "#contact" },
 ];
 
