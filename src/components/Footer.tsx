@@ -5,7 +5,8 @@ const navLinks = [
   { label: "Architecture", href: "#architecture" },
   { label: "Automation", href: "#automation" },
   { label: "Insurance", href: "#insurance" },
-  { label: "Contact", href: "#contact" },
+  { label: "Join Us", href: "#joinus" },
+  { label: "Contact Us", href: "#contact" },
 ];
 
 import logo from "@/assets/nextdigits-logo.png";
