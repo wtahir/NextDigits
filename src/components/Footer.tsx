@@ -16,7 +16,7 @@ const Footer = () => (
     <div className="container mx-auto px-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <a href="#">
-          <img src={logo} alt="NextDigits" className="h-16 w-auto object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]" style={{ mixBlendMode: 'lighten' }} />
+          <img src={logo} alt="NextDigits" className="object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]" style={{ mixBlendMode: 'lighten', width: '240px', margin: '-30px 0' }} />
         </a>
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
           {navLinks.map((link) => (
