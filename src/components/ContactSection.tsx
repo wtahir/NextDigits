@@ -23,12 +23,12 @@ const ContactSection = () => (
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="glow-sm text-base px-8" asChild>
-            <a href="mailto:contact@nextdigits.com">
+            <a href="mailto:Info@nextdigitsai.com">
               Schedule a Consultation <ArrowRight size={18} className="ml-2" />
             </a>
           </Button>
         </div>
-        <p className="text-sm text-muted-foreground mt-6">contact@nextdigits.com</p>
+        <p className="text-sm text-muted-foreground mt-6">Info@nextdigitsai.com</p>
       </motion.div>
     </div>
   </section>
