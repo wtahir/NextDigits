@@ -38,14 +38,11 @@ const HeroSection = () => (
           and intelligent automation to drive efficiency and innovation at scale.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex items-center justify-center">
           <Button size="lg" className="glow-sm text-base px-8" asChild>
             <a href="#services">
               Explore Our Services <ArrowRight size={18} className="ml-2" />
             </a>
-          </Button>
-          <Button size="lg" variant="outline" className="text-base px-8" asChild>
-            <a href="#contact">Schedule a Consultation</a>
           </Button>
         </div>
       </motion.div>

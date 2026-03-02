@@ -21,11 +21,13 @@ const ContactSection = () => (
         <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
           Let's discuss how NextDigits can help you leverage AI and automation to drive growth and efficiency.
         </p>
-        <Button size="lg" className="glow-sm text-base px-8" asChild>
-          <a href="mailto:Info@nextdigitsai.com">
-            Get in Touch <ArrowRight size={18} className="ml-2" />
-          </a>
-        </Button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button size="lg" className="glow-sm text-base px-8" asChild>
+            <a href="mailto:Info@nextdigitsai.com">
+              Schedule a Consultation <ArrowRight size={18} className="ml-2" />
+            </a>
+          </Button>
+        </div>
         <p className="text-sm text-muted-foreground mt-6">Info@nextdigitsai.com</p>
       </motion.div>
     </div>
