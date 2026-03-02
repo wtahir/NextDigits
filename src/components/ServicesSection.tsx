@@ -1,39 +1,62 @@
-import {
-  MessageSquare, Tag, User, Globe, FileText, Search,
-  FolderOpen, BarChart3, Sparkles, Database, ScanLine,
-  TestTube, Wand2, Cpu, Zap, GitBranch
-} from "lucide-react";
+import { motion } from "framer-motion";
+import { BrainCircuit, MessageSquare, Cpu, Database, Lightbulb } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
-import ServiceCard from "./ServiceCard";
 
-const services = [
-  { icon: MessageSquare, title: "Sentiment Analysis", description: "Extract actionable insights from customer feedback, reviews, and social media at enterprise scale." },
-  { icon: Tag, title: "Text Classification", description: "Automate document categorization and content routing with high-accuracy ML models." },
-  { icon: User, title: "Named Entity Recognition", description: "Identify and extract key entities—people, organizations, dates—from unstructured data sources." },
-  { icon: Globe, title: "Language Translation", description: "Deploy neural machine translation for multilingual content and global market expansion." },
-  { icon: FileText, title: "Text Summarization", description: "Transform lengthy reports and documents into concise, decision-ready summaries." },
-  { icon: Search, title: "Keyword Extraction & SEO", description: "Surface high-value terms and optimize content discoverability with NLP-driven analysis." },
-  { icon: FolderOpen, title: "Document Clustering", description: "Automatically organize and structure large document repositories for faster retrieval." },
-  { icon: BarChart3, title: "Automated Reporting", description: "Generate data-driven reports and dashboards from raw datasets with minimal manual effort." },
-  { icon: Sparkles, title: "Advanced Text Analytics", description: "Uncover trends, anomalies, and patterns across text corpora using deep learning techniques." },
-  { icon: Database, title: "Data Engineering for NLP", description: "Design robust data preprocessing pipelines optimized for NLP model training and inference." },
-  { icon: ScanLine, title: "OCR & Document Digitization", description: "Convert scanned documents and images into structured, searchable digital assets." },
-  { icon: TestTube, title: "Model Evaluation & Benchmarking", description: "Rigorously assess model performance against business KPIs with standardized evaluation frameworks." },
-  { icon: Wand2, title: "Prompt Engineering", description: "Craft and optimize prompts to maximize LLM output quality, consistency, and reliability." },
-  { icon: Cpu, title: "AI Model Integration", description: "Seamlessly embed AI and LLM capabilities into your existing technology stack and workflows." },
-  { icon: Zap, title: "Model Optimization", description: "Fine-tune models for optimal latency, cost efficiency, and accuracy in production environments." },
-  { icon: GitBranch, title: "Scalable ML Pipelines", description: "Architect production-grade machine learning pipelines built for reliability and horizontal scale." },
+const offerings = [
+  {
+    icon: BrainCircuit,
+    title: "Intelligent Data Processing",
+    description:
+      "Utilize cutting-edge technologies to transform raw data into actionable insights. From sentiment analysis to text classification, we help you unlock the full potential of your data for informed decision-making.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Natural Language Processing (NLP) Solutions",
+    description:
+      "Leverage our NLP capabilities to automate language tasks, including translation, summarization, and entity recognition. Enhance communication, improve customer engagement, and expand your global reach.",
+  },
+  {
+    icon: Cpu,
+    title: "AI Model Development & Optimization",
+    description:
+      "Our team designs and optimizes AI models tailored to your specific needs. Whether it's integrating AI into existing systems or developing scalable machine learning pipelines, we ensure peak performance and efficiency.",
+  },
+  {
+    icon: Database,
+    title: "Comprehensive Data Management",
+    description:
+      "Streamline your data operations with automated reporting, document digitization, and clustering solutions. Improve accessibility, reduce manual efforts, and enhance data-driven strategies.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Strategic AI Consulting",
+    description:
+      "Partner with us for strategic insights and AI-driven solutions that align with your business goals. From prompt engineering to model evaluation, we provide guidance to maximize your AI investments.",
+  },
 ];
 
 const ServicesSection = () => (
   <SectionWrapper
     id="services"
-    title="AI Services"
-    subtitle="Enterprise-grade AI and NLP solutions engineered to deliver measurable business impact."
+    title="AI Consultancy Solutions"
+    subtitle="At NextDigits, we specialize in delivering advanced AI solutions that empower businesses to innovate and excel. Our expertise spans several key areas designed to enhance your operations and drive growth."
   >
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 max-w-6xl mx-auto">
-      {services.map((s, i) => (
-        <ServiceCard key={s.title} icon={s.icon} title={s.title} description={s.description} index={i} />
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {offerings.map((item, i) => (
+        <motion.div
+          key={item.title}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, delay: i * 0.1 }}
+          className="gradient-border rounded-xl p-8 flex flex-col"
+        >
+          <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5">
+            <item.icon size={24} className="text-accent" />
+          </div>
+          <h3 className="font-heading text-lg font-semibold mb-3">{item.title}</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+        </motion.div>
       ))}
     </div>
   </SectionWrapper>
