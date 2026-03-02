@@ -46,7 +46,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button size="sm" asChild>
-            <a href="#contact">Get in Touch</a>
+            <a href="mailto:Info@nextdigitsai.com">Get in Touch</a>
           </Button>
         </nav>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button size="sm" asChild>
-              <a href="#contact" onClick={() => setMobileOpen(false)}>Get in Touch</a>
+              <a href="mailto:Info@nextdigitsai.com" onClick={() => setMobileOpen(false)}>Get in Touch</a>
             </Button>
           </div>
         </motion.nav>
