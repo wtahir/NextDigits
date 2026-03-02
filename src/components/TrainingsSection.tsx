@@ -1,4 +1,4 @@
-import { Bot, Wand2, Server, Layers, BarChart } from "lucide-react";
+import { Bot, Wand2, Server, Layers } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 import ServiceCard from "./ServiceCard";
 
@@ -7,7 +7,6 @@ const trainings = [
   { icon: Wand2, title: "Prompt Engineering", description: "Master the art of crafting effective prompts for LLMs." },
   { icon: Server, title: "LLM Ops", description: "Deploy, monitor, and manage large language models in production." },
   { icon: Layers, title: "RAG Systems", description: "Build retrieval-augmented generation pipelines for grounded AI." },
-  { icon: BarChart, title: "Alteryx", description: "Data analytics and automation with the Alteryx platform." },
 ];
 
 const TrainingsSection = () => (
