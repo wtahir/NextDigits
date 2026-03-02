@@ -1,48 +1,63 @@
 import { motion } from "framer-motion";
-import { Brain, Cog, Shield } from "lucide-react";
+import { Brain, Cpu, Blocks, Building2, ShieldCheck } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 
-const values = [
-  {
-    icon: Brain,
-    title: "AI-Driven Solutions",
-    description: "Leverage advanced machine learning and NLP to unlock actionable insights from your data.",
-  },
-  {
-    icon: Cog,
-    title: "Process Optimization",
-    description: "Streamline operations with intelligent automation and data-driven decision making.",
-  },
-  {
-    icon: Shield,
-    title: "Industry Expertise",
-    description: "Deep domain knowledge in insurance, finance, and enterprise-scale operations.",
-  },
+const expertise = [
+  { icon: Brain, label: "Artificial Intelligence" },
+  { icon: Cpu, label: "Intelligent Process Automation" },
+  { icon: Blocks, label: "Low-Code Platforms (Appian)" },
+  { icon: Building2, label: "Enterprise Architecture" },
+  { icon: ShieldCheck, label: "Regulated Industry Expertise" },
 ];
 
 const AboutSection = () => (
   <SectionWrapper
     id="about"
-    title="What We Do"
-    subtitle="NextDigits is an AI consultancy startup helping enterprises harness the power of artificial intelligence to transform their operations and drive measurable results."
+    title="About Us"
+    subtitle="We are a specialised AI and Intelligent Automation consultancy helping organisations modernise operations through scalable technology solutions."
   >
-    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      {values.map((v, i) => (
-        <motion.div
-          key={v.title}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.15 }}
-          className="text-center gradient-border rounded-2xl p-8"
-        >
-          <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
-            <v.icon size={28} className="text-primary" />
-          </div>
-          <h3 className="font-heading text-xl font-semibold mb-3">{v.title}</h3>
-          <p className="text-muted-foreground leading-relaxed">{v.description}</p>
-        </motion.div>
-      ))}
+    <div className="max-w-4xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="mb-10"
+      >
+        <h3 className="font-heading text-xl font-semibold mb-6 text-center">Our expertise combines:</h3>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          {expertise.map((item, i) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="flex items-center gap-3 gradient-border rounded-xl p-4"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                <item.icon size={20} className="text-primary" />
+              </div>
+              <span className="text-sm font-medium">{item.label}</span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="text-center gradient-border rounded-2xl p-8"
+      >
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          We don't build experiments.
+        </p>
+        <p className="text-xl font-heading font-semibold mt-2 gradient-text">
+          We build production-ready systems that deliver ROI.
+        </p>
+      </motion.div>
     </div>
   </SectionWrapper>
 );

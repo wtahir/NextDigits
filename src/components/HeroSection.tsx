@@ -29,19 +29,23 @@ const HeroSection = () => (
         </motion.div>
 
         <h1 className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-6">
-          Transform Your Business with{" "}
-          <span className="gradient-text">Intelligent AI</span>
+          Transforming Business Through{" "}
+          <span className="gradient-text">AI & Intelligent Automation</span>
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          NextDigits empowers enterprises with cutting-edge AI solutions, data science expertise, 
-          and intelligent automation to drive efficiency and innovation at scale.
+          We design, architect, and implement enterprise-grade AI and low-code solutions that automate processes, enhance decision-making, and deliver measurable business value.
         </p>
 
-        <div className="flex items-center justify-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="glow-sm text-base px-8" asChild>
+            <a href="mailto:Info@nextdigitsai.com">
+              Schedule a Consultation <ArrowRight size={18} className="ml-2" />
+            </a>
+          </Button>
+          <Button size="lg" variant="outline" className="text-base px-8" asChild>
             <a href="#services">
-              Explore Our Services <ArrowRight size={18} className="ml-2" />
+              Explore Our Capabilities <ArrowRight size={18} className="ml-2" />
             </a>
           </Button>
         </div>
