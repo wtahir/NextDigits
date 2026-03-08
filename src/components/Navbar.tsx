@@ -6,10 +6,10 @@ import CareersDialog from "@/components/CareersDialog";
 import logo from "@/assets/nextdigits-logo.png";
 
 const navLinks = [
-  { label: "About us", href: "#about" },
+  { label: "About Us", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Careers", href: "#careers" },
-  { label: "Contact us", href: "#contact" },
+  { label: "Contact Us", href: "#contact" },
 ];
 
 const Navbar = () => {
