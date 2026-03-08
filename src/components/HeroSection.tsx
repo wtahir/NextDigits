@@ -29,13 +29,8 @@ const HeroSection = () => (
         </motion.div>
 
         <h1 className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-6">
-          Transforming Business Through{" "}
-          <span className="gradient-text">AI & Intelligent Automation</span>
+          Transform Your Business with AI-Driven Intelligent Automation
         </h1>
-
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Transform your business with AI-powered solutions designed for production excellence and measurable ROI.
-        </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="glow-sm text-base px-8" asChild>
