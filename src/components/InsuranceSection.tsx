@@ -79,24 +79,6 @@ const InsuranceSection = () => (
         </div>
       </div>
 
-      {/* Pain Points CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="gradient-border rounded-xl p-8 text-center"
-      >
-        <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4 mx-auto">
-          <AlertTriangle size={22} className="text-destructive" />
-        </div>
-        <h3 className="font-heading text-lg font-semibold mb-2">
-          Pain Points &amp; Customer Challenges
-        </h3>
-        <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
-          We understand the critical challenges insurers face — from legacy system migration and compliance burdens to slow claims cycles. Our solutions are purpose-built to address these pain points head-on.
-        </p>
-      </motion.div>
     </div>
   </SectionWrapper>
 );
