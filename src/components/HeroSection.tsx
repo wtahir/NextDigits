@@ -45,7 +45,7 @@ const HeroSection = () => (
           </Button>
           <Button size="lg" variant="outline" className="text-base px-8" asChild>
             <a href="#services">
-              Explore Our Capabilities <ArrowRight size={18} className="ml-2" />
+              Explore Our Services <ArrowRight size={18} className="ml-2" />
             </a>
           </Button>
         </div>
