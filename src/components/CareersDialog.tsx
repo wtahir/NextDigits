@@ -71,8 +71,11 @@ const CareersDialog = ({ open, onClose }: CareersDialogProps) => {
           >
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-heading text-2xl font-bold">Join Our Team</h2>
-              <button onClick={onClose} className="text-muted-foreground hover:text-foreground transition-colors">
-                <X size={20} />
+              <button
+                onClick={onClose}
+                className="rounded-full p-1.5 bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X size={18} />
               </button>
             </div>
 
