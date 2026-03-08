@@ -43,7 +43,7 @@ const CoreCapabilitiesSection = () => (
         transition={{ duration: 0.5, delay: 0.3 }}
         className="text-center gradient-border rounded-2xl p-8"
       >
-        <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">Outcome</p>
+        <p className="text-sm tracking-widest text-muted-foreground mb-2">Outcome</p>
         <p className="text-xl font-heading font-semibold gradient-text">
           Smarter operations. Data-driven decisions. Enhanced customer experience.
         </p>
