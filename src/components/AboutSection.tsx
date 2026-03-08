@@ -4,7 +4,7 @@ import SectionWrapper from "./SectionWrapper";
 const AboutSection = () => (
   <SectionWrapper
     id="about"
-    title="About us"
+    title="About Us"
     subtitle="We are a specialised AI and intelligent automation consultancy focused on turning document-heavy, compliance-sensitive processes into reliable, auditable digital workflows. We build AI systems that read documents, extract key information, and automate complex workflows. Our agentic AI autonomously plans and executes goal‑driven tasks, deployed with human oversight and safety controls."
   >
     <div className="max-w-4xl mx-auto">
