@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import CareersDialog from "@/components/CareersDialog";
 import logo from "@/assets/nextdigits-logo.png";
 
 const navLinks = [
@@ -14,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [careersOpen, setCareersOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -36,15 +38,25 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.label === "Careers" ? (
+              <button
+                key={link.href}
+                onClick={() => setCareersOpen(true)}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </button>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <Button size="sm" asChild>
             <a href="mailto:Info@nextdigitsai.com">Get in Touch</a>
           </Button>
@@ -64,22 +76,33 @@ const Navbar = () => {
           className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
         >
           <div className="container mx-auto flex flex-col gap-4 py-4 px-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.label === "Careers" ? (
+                <button
+                  key={link.href}
+                  onClick={() => { setCareersOpen(true); setMobileOpen(false); }}
+                  className="text-left text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </button>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <Button size="sm" asChild>
               <a href="mailto:Info@nextdigitsai.com" onClick={() => setMobileOpen(false)}>Get in Touch</a>
             </Button>
           </div>
         </motion.nav>
       )}
+      <CareersDialog open={careersOpen} onClose={() => setCareersOpen(false)} />
     </motion.header>
   );
 };
