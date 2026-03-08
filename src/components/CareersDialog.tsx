@@ -39,11 +39,20 @@ const CareersDialog = ({ open, onClose }: CareersDialogProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!cvFile) {
-      toast({ title: "CV required", description: "Please upload your CV.", variant: "destructive" });
-      return;
-    }
-    toast({ title: "Application submitted!", description: "We'll review your application and get back to you soon." });
+    const body = [
+      formData.name && `Name: ${formData.name}`,
+      formData.email && `Email: ${formData.email}`,
+      formData.phone && `Phone: ${formData.phone}`,
+      formData.currentRole && `Current Role: ${formData.currentRole}`,
+      formData.experience && `Experience: ${formData.experience} years`,
+      formData.message && `Cover Note:\n${formData.message}`,
+      "\n(Please attach your CV to this email)",
+    ].filter(Boolean).join("\n");
+
+    const mailto = `mailto:Careers@nextdigitsai.com?subject=${encodeURIComponent("Job Application")}&body=${encodeURIComponent(body)}`;
+    window.open(mailto, "_blank");
+
+    toast({ title: "Email client opened!", description: "Please attach your CV and send the email." });
     setCvFile(null);
     setFormData({ name: "", email: "", phone: "", experience: "", currentRole: "", message: "" });
     onClose();
