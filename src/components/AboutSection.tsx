@@ -13,7 +13,7 @@ const expertise = [
 const AboutSection = () => (
   <SectionWrapper
     id="about"
-    title="About Us"
+    title="About us"
     subtitle="We are a specialised AI and Intelligent Automation consultancy helping organisations modernise operations through scalable technology solutions."
   >
     <div className="max-w-4xl mx-auto">
