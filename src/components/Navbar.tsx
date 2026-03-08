@@ -8,7 +8,7 @@ import logo from "@/assets/nextdigits-logo.png";
 const navLinks = [
   { label: "About Us", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Industries", href: "#industries" },
+  { label: "Industries", href: "#insurance" },
   { label: "Careers", href: "#careers" },
   { label: "Contact Us", href: "#contact" },
 ];
