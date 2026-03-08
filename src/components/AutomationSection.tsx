@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import {
   Settings,
-  Code,
   Bot,
   AppWindow,
   Search,
@@ -13,7 +12,6 @@ import SectionWrapper from "./SectionWrapper";
 
 const capabilities = [
   { icon: Settings, title: "Business Process Management / Process Improvement" },
-  { icon: Code, title: "Development" },
   { icon: Bot, title: "RPA & AI" },
   { icon: AppWindow, title: "Low Code / Appian" },
   { icon: Search, title: "Business Analysis" },
