@@ -28,8 +28,9 @@ const HeroSection = () => (
           AI Consultancy · Business Optimization · Innovation
         </motion.div>
 
-        <h1 className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-6">
-          Transform Your Business with AI-Driven Intelligent Automation
+        <h1 className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-10">
+          Transform Your Business with{" "}
+          <span className="gradient-text">AI-Driven Intelligent Automation</span>
         </h1>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
