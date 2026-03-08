@@ -18,7 +18,7 @@ const AboutSection = () => (
       >
         <h3 className="font-heading text-xl font-semibold mb-4">Our Mission</h3>
         <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-          We accelerate time-to-value by delivering production grade AI that: converts documents into reliable data, automates end-to-end business workflows, and deploys LLM-powered AI solutions.
+          Our mission is to design and build practical AI solutions that help organizations automate complex work, unlock the value of their data, and operate more intelligently. We accelerate time-to-value by delivering production grade AI that: converts documents into reliable data, automates end-to-end business workflows, and deploys LLM-powered AI solutions.
         </p>
       </motion.div>
 
