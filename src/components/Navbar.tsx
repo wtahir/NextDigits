@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/nextdigits-logo.png";
 
 const navLinks = [
-  { label: "About Us", href: "#about" },
+  { label: "About us", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Careers", href: "#careers" },
   { label: "Contact Us", href: "#contact" },
