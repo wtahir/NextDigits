@@ -34,7 +34,7 @@ const HeroSection = () => (
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          We design, architect, and implement enterprise-grade AI and low-code solutions that automate processes, enhance decision-making, and deliver measurable business value.
+          We build AI systems that read documents, extract key information, and automate complex workflows. Our agentic AI autonomously plans and executes goal‑driven tasks, deployed with human oversight and safety controls.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
