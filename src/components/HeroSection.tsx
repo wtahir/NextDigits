@@ -1,15 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    {/* Hero background image */}
-    <div className="absolute inset-0">
-      <img src={heroBg} alt="" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-background/60" />
-    </div>
+  <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
     {/* Decorative elements */}
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
