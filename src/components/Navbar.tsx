@@ -24,6 +24,7 @@ const Navbar = () => {
   }, []);
 
   return (
+    <>
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -102,8 +103,9 @@ const Navbar = () => {
           </div>
         </motion.nav>
       )}
-      <CareersDialog open={careersOpen} onClose={() => setCareersOpen(false)} />
     </motion.header>
+    <CareersDialog open={careersOpen} onClose={() => setCareersOpen(false)} />
+    </>
   );
 };
 
