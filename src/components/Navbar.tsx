@@ -1,13 +1,20 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CareersDialog from "@/components/CareersDialog";
 import logo from "@/assets/nextdigits-logo.png";
 
 const navLinks = [
   { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
+  {
+    label: "Services",
+    href: "#services",
+    dropdown: [
+      { label: "AI Services", href: "#services" },
+      { label: "Intelligent Automation Services", href: "#automation" },
+    ],
+  },
   { label: "Industries", href: "#insurance" },
   { label: "Careers", href: "#careers" },
   { label: "Contact Us", href: "#contact" },
@@ -17,6 +24,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [careersOpen, setCareersOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -49,6 +58,34 @@ const Navbar = () => {
               >
                 {link.label}
               </button>
+            ) : link.dropdown ? (
+              <div
+                key={link.href}
+                className="relative"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
+                <button className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
+                  {link.label}
+                  <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {servicesOpen && (
+                  <div className="absolute top-full left-0 pt-2">
+                    <div className="bg-background/95 backdrop-blur-xl border border-border rounded-lg shadow-lg py-2 min-w-[260px]">
+                      {link.dropdown.map((item) => (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors"
+                          onClick={() => setServicesOpen(false)}
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ) : (
               <a
                 key={link.href}
@@ -87,6 +124,30 @@ const Navbar = () => {
                 >
                   {link.label}
                 </button>
+              ) : link.dropdown ? (
+                <div key={link.href}>
+                  <button
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+                  >
+                    {link.label}
+                    <ChevronDown size={14} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="flex flex-col gap-2 pl-4 mt-2">
+                      {link.dropdown.map((item) => (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <a
                   key={link.href}
