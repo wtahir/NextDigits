@@ -1,0 +1,29 @@
+# NextDigits Backend Configuration
+# This file ensures proper routing for the PHP API endpoints
+
+# Enable RewriteEngine
+RewriteEngine On
+
+# Allow CORS for API requests
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Increase upload file size limit (if allowed by hosting)
+php_value upload_max_filesize 10M
+php_value post_max_size 11M
+php_value memory_limit 128M
+php_value max_execution_time 300
+
+# Route API requests to PHP files
+RewriteRule ^api/(.*)$ api/$1 [L,QSA]
+
+# Don't rewrite files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# For SPA routing - redirect all other requests to index.html
+RewriteRule ^ index.html [L]

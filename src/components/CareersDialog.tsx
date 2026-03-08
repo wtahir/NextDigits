@@ -17,6 +17,7 @@ const CareersDialog = ({ open, onClose }: CareersDialogProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [step, setStep] = useState<"info" | "apply">("info");
   const [cvFile, setCvFile] = useState<File | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,26 +44,60 @@ const CareersDialog = ({ open, onClose }: CareersDialogProps) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const body = [
-      formData.name && `Name: ${formData.name}`,
-      formData.email && `Email: ${formData.email}`,
-      formData.phone && `Phone: ${formData.phone}`,
-      formData.currentRole && `Current Role: ${formData.currentRole}`,
-      formData.experience && `Experience: ${formData.experience} years`,
-      formData.message && `Cover Note:\n${formData.message}`,
-      "\n(Please attach your CV to this email)",
-    ].filter(Boolean).join("\n");
+    
+    if (!cvFile) {
+      toast({ 
+        title: "CV Required", 
+        description: "Please upload your CV before submitting.", 
+        variant: "destructive" 
+      });
+      return;
+    }
 
-    const mailto = `mailto:Careers@nextdigitsai.com?subject=${encodeURIComponent("Solicited Application")}&body=${encodeURIComponent(body)}`;
-    window.open(mailto, "_blank");
+    setIsSubmitting(true);
 
-    toast({ title: "Email client opened!", description: "Please attach your CV and send the email." });
-    setCvFile(null);
-    setFormData({ name: "", email: "", phone: "", experience: "", currentRole: "", message: "" });
-    setStep("info");
-    onClose();
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('cv', cvFile);
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('experience', formData.experience);
+      formDataToSend.append('currentRole', formData.currentRole);
+      formDataToSend.append('message', formData.message);
+
+      const response = await fetch('/api/submit-application.php', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        toast({ 
+          title: "Application Submitted!", 
+          description: result.message || "We'll review your CV and get back to you soon."
+        });
+        
+        // Reset form
+        setCvFile(null);
+        setFormData({ name: "", email: "", phone: "", experience: "", currentRole: "", message: "" });
+        setStep("info");
+        onClose();
+      } else {
+        throw new Error(result.message || 'Failed to submit application');
+      }
+    } catch (error) {
+      toast({ 
+        title: "Submission Failed", 
+        description: error instanceof Error ? error.message : "Please try again or email us directly at careers@nextdigitsai.com", 
+        variant: "destructive" 
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const update = (field: string, value: string) => setFormData((p) => ({ ...p, [field]: value }));
@@ -182,8 +217,9 @@ const CareersDialog = ({ open, onClose }: CareersDialogProps) => {
                   <Textarea id="message" placeholder="Tell us why you'd like to join NextDigits..." rows={3} value={formData.message} onChange={(e) => update("message", e.target.value)} />
                 </div>
 
-                <Button type="submit" className="w-full glow-sm" size="lg">
-                  <FileText size={18} className="mr-2" /> Submit Application
+                <Button type="submit" className="w-full glow-sm" size="lg" disabled={isSubmitting || !cvFile}>
+                  <FileText size={18} className="mr-2" /> 
+                  {isSubmitting ? "Submitting..." : "Submit Application"}
                 </Button>
               </form>
             )}
