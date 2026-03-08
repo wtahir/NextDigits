@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileSearch, Sparkles, Database, MessageSquareText, TrendingUp, BarChart3, Bot } from "lucide-react";
+import { FileSearch, Sparkles, Database, MessageSquareText, BarChart3, Bot } from "lucide-react";
 import SectionWrapper from "./SectionWrapper";
 
 const capabilities = [
@@ -8,7 +8,6 @@ const capabilities = [
   { icon: Bot, label: "Agentic AI & Autonomous Workflows" },
   { icon: Database, label: "RAG-based Knowledge Systems" },
   { icon: MessageSquareText, label: "AI Assistants & Chatbots" },
-  { icon: TrendingUp, label: "Predictive & Risk Models" },
   { icon: BarChart3, label: "Sentiment & Text Analytics" },
 ];
 
