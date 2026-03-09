@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import heroImage from "@/assets/hero-option-3.jpg";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
-    {/* Decorative elements */}
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }} />
+  <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    {/* Hero background image */}
+    <div className="absolute inset-0">
+      <img src={heroImage} alt="AI agent overlooking technological landscape" className="w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-background/60" />
     </div>
 
     <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
