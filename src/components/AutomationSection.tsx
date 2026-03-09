@@ -26,7 +26,7 @@ const AutomationSection = () => (
     title="Intelligent Automation Services"
     subtitle="End-to-end automation capabilities that modernize your operations, from process discovery to scalable implementation."
   >
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
       {capabilities.map((item, i) => (
         <motion.div
           key={item.title}
