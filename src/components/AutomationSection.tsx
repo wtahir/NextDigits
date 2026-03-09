@@ -34,7 +34,7 @@ const AutomationSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: i * 0.07 }}
-          className="gradient-border rounded-xl p-6 flex flex-col items-center text-center"
+          className="gradient-border rounded-xl p-6 flex flex-col items-center text-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
         >
           <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
             <item.icon size={22} className="text-primary" />
