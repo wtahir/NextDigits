@@ -50,13 +50,29 @@ const AboutSection = () => (
         </p>
       </motion.div>
 
-      {/* Why Choose Us */}
+      {/* Tagline */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="mb-12 text-center"
+        className="text-center gradient-border rounded-2xl p-8 mb-12"
+      >
+        <p className="text-lg text-muted-foreground leading-relaxed">
+          We don't build experiments.
+        </p>
+        <p className="text-xl font-heading font-semibold mt-2 gradient-text">
+          We build production-ready systems that deliver ROI.
+        </p>
+      </motion.div>
+
+      {/* Why Choose Us */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+        className="text-center"
       >
         <h3 className="font-heading text-xl font-semibold mb-4">Why Choose Us</h3>
         <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -80,22 +96,6 @@ const AboutSection = () => (
             </motion.div>
           ))}
         </div>
-      </motion.div>
-
-      {/* Tagline */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.15 }}
-        className="text-center gradient-border rounded-2xl p-8"
-      >
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          We don't build experiments.
-        </p>
-        <p className="text-xl font-heading font-semibold mt-2 gradient-text">
-          We build production-ready systems that deliver ROI.
-        </p>
       </motion.div>
     </div>
   </SectionWrapper>
