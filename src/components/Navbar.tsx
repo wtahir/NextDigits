@@ -17,6 +17,11 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [careersOpen, setCareersOpen] = useState(false);
 
+  const handleScrollToTop = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -33,7 +38,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
-        <a href="#">
+        <a href="#" onClick={handleScrollToTop}>
           <img src={logo} alt="NextDigits" className="object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]" style={{ mixBlendMode: 'lighten', width: '280px', margin: '-40px 0' }} />
         </a>
 
