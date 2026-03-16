@@ -28,14 +28,10 @@ const HeroSection = () => (
           AI Consultancy · Business Optimization · Innovation
         </motion.div>
 
-        <h1 className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-6">
-          Transforming Business Through{" "}
-          <span className="gradient-text">AI & Intelligent Automation</span>
+        <h1 className="font-heading text-5xl md:text-7xl font-bold leading-tight mb-10">
+          Transform Your Business with{" "}
+          <span className="gradient-text">AI-Driven Intelligent Automation</span>
         </h1>
-
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          We build AI systems that read documents, extract key information, and automate complex workflows. Our agentic AI autonomously plans and executes goal‑driven tasks, deployed with human oversight and safety controls.
-        </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="glow-sm text-base px-8" asChild>
@@ -45,7 +41,7 @@ const HeroSection = () => (
           </Button>
           <Button size="lg" variant="outline" className="text-base px-8" asChild>
             <a href="#services">
-              Explore Our Capabilities <ArrowRight size={18} className="ml-2" />
+              Explore Our Services <ArrowRight size={18} className="ml-2" />
             </a>
           </Button>
         </div>

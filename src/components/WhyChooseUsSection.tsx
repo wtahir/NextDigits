@@ -32,7 +32,7 @@ const reasons = [
 const WhyChooseUsSection = () => (
   <SectionWrapper
     id="why-us"
-    title="Why choose us"
+    title="Why Choose Us"
     subtitle="We combine deep technical expertise with a pragmatic delivery approach that prioritises measurable outcomes."
   >
     <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">

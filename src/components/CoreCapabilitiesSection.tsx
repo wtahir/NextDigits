@@ -13,8 +13,8 @@ const capabilities = [
 
 const CoreCapabilitiesSection = () => (
   <SectionWrapper
-    id="capabilities"
-    title="Core Capabilities"
+    id="services"
+    title="AI Services"
     subtitle="Purpose-built AI capabilities that transform how your organisation processes information and makes decisions."
   >
     <div className="max-w-4xl mx-auto">
