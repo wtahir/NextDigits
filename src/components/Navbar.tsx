@@ -47,9 +47,14 @@ const Navbar = () => {
         scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-4">
+      <div className="container mx-auto flex items-center justify-between h-20 md:h-24 px-4">
         <a href="#" onClick={handleScrollToTop}>
-          <img src={logo} alt="NextDigits" className="object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]" style={{ mixBlendMode: 'lighten', width: '280px', margin: '-40px 0' }} />
+          <img
+            src={logo}
+            alt="NextDigits"
+            className="h-16 md:h-20 w-auto object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]"
+            style={{ mixBlendMode: "lighten" }}
+          />
         </a>
 
         {/* Desktop nav */}
