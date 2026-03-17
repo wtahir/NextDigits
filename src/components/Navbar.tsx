@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CareersDialog from "@/components/CareersDialog";
-import logo from "@/assets/nextdigits-logo.png";
+import logo from "@/assets/short_logo.png";
 
 const navLinks = [
   { label: "About Us", href: "#about" },
