@@ -52,7 +52,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="NextDigits"
-            className="h-16 md:h-20 w-auto object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]"
+            className="w-[240px] h-auto object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]"
             style={{ mixBlendMode: "lighten" }}
           />
         </a>
