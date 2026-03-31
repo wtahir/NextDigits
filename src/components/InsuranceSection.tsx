@@ -3,15 +3,45 @@ import { Shield, Cpu, FileSearch, ClipboardList, Receipt, FileText, AlertTriangl
 import SectionWrapper from "./SectionWrapper";
 
 const solutions = [
-  { icon: Shield, title: "Guidewire" },
-  { icon: Cpu, title: "AI-based Claims Automation" },
-  { icon: FileSearch, title: "Document Understanding" },
+  {
+    icon: Shield,
+    title: "Guidewire",
+    description:
+      "Implementation, configuration, and integration of Guidewire ClaimCenter, PolicyCenter, and BillingCenter — helping insurers modernise their core platform with best-practice workflows.",
+  },
+  {
+    icon: Cpu,
+    title: "AI-based Claims Automation",
+    description:
+      "Accelerate claims handling with AI that triages submissions, extracts loss details from unstructured documents, and routes claims to the right adjuster — reducing cycle times and operational costs.",
+  },
+  {
+    icon: FileSearch,
+    title: "Document Understanding",
+    description:
+      "Turn policy documents, medical reports, and correspondence into structured data using intelligent document processing — enabling straight-through processing and faster decision-making.",
+  },
 ];
 
 const processes = [
-  { icon: ClipboardList, title: "Claims" },
-  { icon: Receipt, title: "Billing" },
-  { icon: FileText, title: "Policy" },
+  {
+    icon: ClipboardList,
+    title: "Claims",
+    description:
+      "End-to-end claims lifecycle management — from first notice of loss through investigation, reserving, and settlement — powered by automation and real-time analytics.",
+  },
+  {
+    icon: Receipt,
+    title: "Billing",
+    description:
+      "Streamlined premium billing, payment processing, and reconciliation workflows that improve cash flow, reduce errors, and enhance the policyholder experience.",
+  },
+  {
+    icon: FileText,
+    title: "Policy",
+    description:
+      "Automated policy administration covering quoting, binding, endorsements, and renewals — ensuring accuracy, compliance, and a seamless experience for agents and customers.",
+  },
 ];
 
 const InsuranceSection = () => (
@@ -44,7 +74,8 @@ const InsuranceSection = () => (
               <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
                 <item.icon size={22} className="text-secondary" />
               </div>
-              <h4 className="font-heading text-sm font-semibold">{item.title}</h4>
+              <h4 className="font-heading text-sm font-semibold mb-2">{item.title}</h4>
+              <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>
@@ -73,7 +104,8 @@ const InsuranceSection = () => (
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
                 <item.icon size={22} className="text-accent" />
               </div>
-              <h4 className="font-heading text-sm font-semibold">{item.title}</h4>
+              <h4 className="font-heading text-sm font-semibold mb-2">{item.title}</h4>
+              <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>

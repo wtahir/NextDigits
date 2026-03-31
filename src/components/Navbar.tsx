@@ -32,6 +32,15 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleScrollTo = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -87,7 +96,7 @@ const Navbar = () => {
                           key={item.href}
                           href={item.href}
                           className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors"
-                          onClick={() => setServicesOpen(false)}
+                          onClick={(e) => { handleScrollTo(e, item.href); setServicesOpen(false); }}
                         >
                           {item.label}
                         </a>
@@ -101,6 +110,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                onClick={(e) => handleScrollTo(e, link.href)}
               >
                 {link.label}
               </a>
@@ -150,7 +160,7 @@ const Navbar = () => {
                           key={item.href}
                           href={item.href}
                           className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                          onClick={() => setMobileOpen(false)}
+                          onClick={(e) => { handleScrollTo(e, item.href); setMobileOpen(false); }}
                         >
                           {item.label}
                         </a>
@@ -163,7 +173,7 @@ const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => { handleScrollTo(e, link.href); setMobileOpen(false); }}
                 >
                   {link.label}
                 </a>

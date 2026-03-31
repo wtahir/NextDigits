@@ -17,6 +17,15 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleScrollTo = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <>
       <footer className="border-t border-border py-10">
@@ -41,6 +50,7 @@ const Footer = () => {
                     key={link.href}
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={(e) => handleScrollTo(e, link.href)}
                   >
                     {link.label}
                   </a>

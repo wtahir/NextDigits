@@ -40,7 +40,13 @@ const HeroSection = () => (
             </a>
           </Button>
           <Button size="lg" variant="outline" className="text-base px-8" asChild>
-            <a href="#services">
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
               Explore Our Services <ArrowRight size={18} className="ml-2" />
             </a>
           </Button>
