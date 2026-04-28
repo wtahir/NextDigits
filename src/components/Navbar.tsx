@@ -53,7 +53,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border" : "bg-transparent"
+        scrolled ? "bg-background/88 backdrop-blur-xl border-b border-border shadow-[0_18px_60px_-40px_hsl(var(--primary)/0.45)]" : "bg-background/25 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-20 md:h-24 px-4">
@@ -73,7 +73,7 @@ const Navbar = () => {
               <button
                 key={link.href}
                 onClick={() => setCareersOpen(true)}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {link.label}
               </button>
@@ -84,18 +84,18 @@ const Navbar = () => {
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
               >
-                <button className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1">
+                <button className="text-sm text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1">
                   {link.label}
                   <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
                 </button>
                 {servicesOpen && (
                   <div className="absolute top-full left-0 pt-2">
-                    <div className="bg-background/95 backdrop-blur-xl border border-border rounded-lg shadow-lg py-2 min-w-[260px]">
+                    <div className="bg-popover/95 backdrop-blur-xl border border-border rounded-lg shadow-lg py-2 min-w-[260px]">
                       {link.dropdown.map((item) => (
                         <a
                           key={item.href}
                           href={item.href}
-                          className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                           onClick={(e) => { handleScrollTo(e, item.href); setServicesOpen(false); }}
                         >
                           {item.label}
@@ -109,7 +109,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 onClick={(e) => handleScrollTo(e, link.href)}
               >
                 {link.label}
