@@ -50,14 +50,14 @@ const InsuranceSection = () => (
     title="Industry Expertise — Insurance"
     subtitle="Deep domain knowledge in the insurance sector, combining proven platforms with AI-driven innovation."
   >
-    <div className="max-w-5xl mx-auto space-y-12">
+    <div className="max-w-6xl space-y-12">
       {/* Solutions */}
       <div>
         <motion.h3
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-heading text-xl font-semibold text-center mb-6"
+          className="font-heading text-xl font-semibold mb-6"
         >
           Solutions
         </motion.h3>
@@ -69,7 +69,7 @@ const InsuranceSection = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="gradient-border rounded-xl p-6 flex flex-col items-center text-center"
+              className="gradient-border rounded-md p-6 flex flex-col text-left"
             >
               <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
                 <item.icon size={22} className="text-secondary" />
@@ -87,7 +87,7 @@ const InsuranceSection = () => (
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-heading text-xl font-semibold text-center mb-6"
+          className="font-heading text-xl font-semibold mb-6"
         >
           Processes
         </motion.h3>
@@ -99,7 +99,7 @@ const InsuranceSection = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="gradient-border rounded-xl p-6 flex flex-col items-center text-center"
+              className="gradient-border rounded-md p-6 flex flex-col text-left"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
                 <item.icon size={22} className="text-accent" />
