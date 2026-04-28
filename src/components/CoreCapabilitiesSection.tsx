@@ -47,7 +47,7 @@ const CoreCapabilitiesSection = () => (
     title="AI Services"
     subtitle="Purpose-built AI capabilities that transform how your organisation processes information and makes decisions."
   >
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-6xl">
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {capabilities.map((item, i) => (
           <motion.div
@@ -56,7 +56,7 @@ const CoreCapabilitiesSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="gradient-border rounded-xl p-6 flex flex-col"
+            className="gradient-border rounded-md p-6 flex flex-col"
           >
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
@@ -74,7 +74,7 @@ const CoreCapabilitiesSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-center gradient-border rounded-2xl p-8"
+        className="gradient-border rounded-md p-8"
       >
         <p className="text-sm tracking-widest text-muted-foreground mb-2">Outcome</p>
         <p className="text-xl font-heading font-semibold gradient-text">
