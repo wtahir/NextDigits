@@ -59,6 +59,7 @@ const Footer = () => {
             </nav>
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} NextDigits. All rights reserved.
+              {" "}Owned by Azimi FZE LLC.
             </p>
           </div>
         </div>
