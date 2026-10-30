@@ -53,7 +53,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-card/95 backdrop-blur-xl border-b border-border shadow-[0_18px_60px_-45px_hsl(var(--foreground)/0.35)]" : "bg-card/90 backdrop-blur-sm border-b border-border/60"
+        scrolled ? "bg-background/88 backdrop-blur-xl border-b border-border shadow-[0_18px_60px_-40px_hsl(var(--primary)/0.45)]" : "bg-background/25 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-20 md:h-24 px-4">
@@ -61,7 +61,8 @@ const Navbar = () => {
           <img
             src={logo}
             alt="NextDigits"
-            className="w-[240px] h-auto object-contain"
+            className="w-[240px] h-auto object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]"
+            style={{ mixBlendMode: "lighten" }}
           />
         </a>
 
@@ -89,7 +90,7 @@ const Navbar = () => {
                 </button>
                 {servicesOpen && (
                   <div className="absolute top-full left-0 pt-2">
-                    <div className="bg-popover/95 backdrop-blur-xl border border-border rounded-md shadow-lg py-2 min-w-[260px]">
+                    <div className="bg-popover/95 backdrop-blur-xl border border-border rounded-lg shadow-lg py-2 min-w-[260px]">
                       {link.dropdown.map((item) => (
                         <a
                           key={item.href}
@@ -131,7 +132,7 @@ const Navbar = () => {
         <motion.nav
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden bg-card/98 backdrop-blur-xl border-b border-border"
+          className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
         >
           <div className="container mx-auto flex flex-col gap-4 py-4 px-4">
             {navLinks.map((link) =>

@@ -28,11 +28,11 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="border-t border-border bg-card py-10">
+      <footer className="border-t border-border py-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <a href="#" onClick={handleScrollToTop}>
-              <img src={logo} alt="NextDigits" className="object-contain" style={{ width: '240px', margin: '-30px 0' }} />
+              <img src={logo} alt="NextDigits" className="object-contain brightness-110 contrast-110 drop-shadow-[0_0_8px_hsl(var(--primary)/0.3)]" style={{ mixBlendMode: 'lighten', width: '240px', margin: '-30px 0' }} />
             </a>
             <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               {navLinks.map((link) =>

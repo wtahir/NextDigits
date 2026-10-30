@@ -10,9 +10,9 @@ const ContactSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-4xl gradient-border rounded-md p-10 md:p-14"
+        className="max-w-2xl mx-auto text-center gradient-border rounded-2xl p-10 md:p-14"
       >
-        <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mb-6">
+        <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
           <Mail size={32} className="text-primary" />
         </div>
         <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
@@ -21,7 +21,7 @@ const ContactSection = () => (
         <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
           Let's discuss how NextDigits can help you leverage AI and automation to drive growth and efficiency.
         </p>
-        <div className="flex flex-col sm:flex-row items-start gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="glow-sm text-base px-8" asChild>
             <a href="mailto:Info@nextdigitsai.com">
               Schedule a Consultation <ArrowRight size={18} className="ml-2" />
